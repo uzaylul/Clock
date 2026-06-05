@@ -8,7 +8,7 @@
     :root {
       --bg-grad: radial-gradient(1200px 600px at 50% -10%, rgba(255,255,255,0.2), rgba(255,255,255,0) 60%),
                   conic-gradient(from 180deg at 50% 120%, rgba(0,0,0,0.1), rgba(0,0,0,0) 30%),
-                  linear-gradient(120deg, #0f172a, #0b1026);
+                  linear-gradient(120deg, #1f1f1f, #0a0a0a);
       --card-bg: rgba(255,255,255,0.05);
       --card-bd: rgba(255,255,255,0.10);
       --text-shadow: 0 8px 30px rgba(0,0,0,0.35);
@@ -31,11 +31,10 @@
     .stage {
       position: relative;
       width: 100%;
-      max-width: 72rem; /* ~max-w-4xl */
+      max-width: 72rem;
       margin: 0 1rem;
     }
 
-    /* Fine grid background */
     .grid-overlay::before {
       content: "";
       position: fixed;
@@ -46,7 +45,6 @@
       background-size: 24px 24px;
     }
 
-    /* Glow */
     .glow {
       position: fixed;
       inset: 0;
@@ -56,7 +54,7 @@
       border-radius: 50%;
       opacity: .30;
       filter: blur(100px);
-      background: radial-gradient(circle at 50% 50%, #60a5fa, #34d399, transparent 60%);
+      background: radial-gradient(circle at 50% 50%, #d1d5db, #6b7280, transparent 60%);
       z-index: -1;
     }
 
@@ -66,7 +64,7 @@
       background: var(--card-bg);
       border: 1px solid var(--card-bd);
       box-shadow: 0 20px 60px rgba(0,0,0,0.35);
-      border-radius: 24px; /* ~rounded-3xl */
+      border-radius: 24px;
     }
 
     .pad { padding: 2.5rem; }
@@ -78,11 +76,11 @@
       text-align: center;
       user-select: none;
       font-weight: 600;
-      letter-spacing: -0.02em; /* tracking-tight */
-      font-variant-numeric: tabular-nums; /* tabular alignment */
+      letter-spacing: -0.02em;
+      font-variant-numeric: tabular-nums;
       text-shadow: var(--text-shadow);
       line-height: 1;
-      font-size: 14vw; /* mobile */
+      font-size: 14vw;
     }
     @media (min-width: 640px) { time#clock { font-size: 10vw; } }
     @media (min-width: 1024px) { time#clock { font-size: 8vw; } }
@@ -102,7 +100,6 @@
       color: rgba(255,255,255,0.6);
     }
 
-    /* Focus test button (accessibility) */
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
     .sr-only:focus { position: fixed; bottom: 1rem; left: 1rem; width: auto; height: auto; padding: .5rem .75rem; border-radius: .5rem; background: rgba(255,255,255,0.1); color: #fff; clip: auto; white-space: normal; }
   </style>
@@ -142,8 +139,8 @@
         elDate.textContent = fmtDate.format(now);
       }
 
-      tick(); // initial render
-      setInterval(tick, 1000); // update every second
+      tick();
+      setInterval(tick, 1000);
     })();
   </script>
 </body>
