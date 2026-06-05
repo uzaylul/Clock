@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lokal Saat</title>
+  <title>Local Time</title>
   <style>
     :root {
       --bg-grad: radial-gradient(1200px 600px at 50% -10%, rgba(255,255,255,0.2), rgba(255,255,255,0) 60%),
@@ -35,7 +35,7 @@
       margin: 0 1rem;
     }
 
-    /* İnce grid arkaplan */
+    /* Fine grid background */
     .grid-overlay::before {
       content: "";
       position: fixed;
@@ -46,7 +46,7 @@
       background-size: 24px 24px;
     }
 
-    /* Parıltı */
+    /* Glow */
     .glow {
       position: fixed;
       inset: 0;
@@ -102,7 +102,7 @@
       color: rgba(255,255,255,0.6);
     }
 
-    /* Odak test butonu (erişilebilirlik) */
+    /* Focus test button (accessibility) */
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
     .sr-only:focus { position: fixed; bottom: 1rem; left: 1rem; width: auto; height: auto; padding: .5rem .75rem; border-radius: .5rem; background: rgba(255,255,255,0.1); color: #fff; clip: auto; white-space: normal; }
   </style>
@@ -118,10 +118,10 @@
         <div id="date"></div>
       </div>
     </div>
-    <footer class="note">Yerel saat ve tarih — sistem saatine göre anlık güncellenir.</footer>
+    <footer class="note">Local time and date — updates every second based on system clock.</footer>
   </main>
 
-  <button class="sr-only">Odağı temizle</button>
+  <button class="sr-only">Clear focus</button>
 
   <script>
     (function(){
@@ -142,8 +142,8 @@
         elDate.textContent = fmtDate.format(now);
       }
 
-      tick(); // ilk çizim
-      setInterval(tick, 1000); // saniyede bir güncelle
+      tick(); // initial render
+      setInterval(tick, 1000); // update every second
     })();
   </script>
 </body>
